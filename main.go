@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
 // Q2.1
 //
 //	func main() {
@@ -10,14 +15,26 @@ package main
 //
 
 // Q2.2
-//func main() {
-//	num := 0
-//here:
-//	fmt.Printf("%d\n", num)
-//	if num < 10 {
-//		num++
-//		goto here
+//
+//	func main() {
+//		num := 0
+//
+// here:
+//
+//		fmt.Printf("%d\n", num)
+//		if num < 10 {
+//			num++
+//			goto here
+//		}
 //	}
+
+// Q2.3
+//func main() {
+//	var arr [10]int
+//	for num := 0; num < 10; num++ {
+//		arr[num] = num
+//	}
+//	fmt.Printf("%d", arr)
 //}
 
 // Q3
@@ -36,3 +53,28 @@ package main
 //		fmt.Println()
 //	}
 //}
+
+// Q4.1
+//func main() {
+//	str := "A"
+//	for i := 0; i < 100; i++ {
+//		str = str + "A"
+//		fmt.Println(str)
+//	}
+//}
+
+// Q4.2
+func main() {
+	str := "A"
+	length := 0
+	for i := 0; i < 100; i++ {
+		str = str + "A"
+		length = length + i
+		fmt.Println(str)
+	}
+	fmt.Printf("%d\n", length)
+	fmt.Printf("Runes: %d\n",
+		len([]byte(str)), utf8.RuneCount([]byte(str)))
+}
+
+//Q4.3
